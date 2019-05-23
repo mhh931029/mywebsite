@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript" src="../helper/request.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBox = document.createElement("div");
+			oBox.style.width = document.getElementsByTagName("body")[0].offsetWidth * 0.9 + "px"; 
+			oBox.style.height = 600 + "px";
+			oBox.style.margin = "0 auto";
+			oBox.style.border = "1px solid black";
+			oBox.style.boxShadow = "0 0 5px 1px black";
+			document.getElementsByTagName("body")[0].appendChild(oBox);
+
+			requestByGET("http://localhost/mywebsite/php/select_cart.php",function(response){
+				var dataSource = JSON.parse(response);
+				var groupedArray = groupByPatiendName(dataSource);
+				// console.log(groupedArray);
+				for (var i = 0; i < groupedArray.length; i++) {
+					ListInquiryResult(groupedArray[i][1][groupedArray[i][0]], i, oBox, 0.9 ,true,"http://localhost/mywebsite/php/delete_cart_item.php");
+				}
+			})
+
+		};
+
+		function groupByPatiendName(dataSource){
+			var dataSourceObj = new Object();
+			var key = dataSource[0]["patientName"];
+			dataSourceObj[key] = new Array();
+			for (var i = 1; i < dataSource.length; i++) {
+				if (dataSource[i]["patientName"] != dataSource[i - 1]["patientName"] && dataSource.indexOf(dataSource[i]["patientName"]) == -1 ) {
+					var key = dataSource[i]["patientName"];
+					dataSourceObj[key] = new Array();
+				}
+			}
+
+			for (var i = 0; i < dataSource.length; i++) {
+				dataSourceObj[dataSource[i]["patientName"]].push(dataSource[i]);
+			}
+
+			var groupedArray = new Array();
+			for (var key in dataSourceObj){
+				var tempArray = new Array();
+				var tempObj = new Object();
+				tempObj[key] = dataSourceObj[key];
+				tempArray.push(key);
+				tempArray.push(tempObj);
+				groupedArray.push(tempArray);
+			}
+			return groupedArray;
+		}
+
+		function ListInquiryResult(groupedDataSoucre, sectionIndex, div, fontSize, ifNeedDeletion, url){
+			// console.log(groupedDataSoucre);
+			// console.log(sectionIndex);
+			// console.log(div);
+			// console.log(fontSize);
+			// console.log(ifNeedDeletion);
+			// console.log(url);
+
+			var section = document.createElement("div");
+			section.id = "section_" + sectionIndex;
+			section.className = "section";
+			section.style.width = div.offsetWidth + "px";
+			section.style.fontSize = fontSize + "rem";
+			div.appendChild(section);
+			var profile = document.createElement("div");
+			profile.style.width = section.offsetWidth + "px";
+			profile.style.height = 25 + "px";
+			profile.style.backgroundColor = "rgb(150,120,110)";
+			profile.style.color = "white";
+			profile.style.fontWeight = "blod";
+			profile.style.textAlign = "center";
+			profile.style.border = "1px dashed black";
+			profile.style.borderBottom = "none";
+			section.appendChild(profile);
+			var profileSub1 = document.createElement("div");
+			profileSub1.style.width = section.offsetWidth * 0.3 + "px";
+			profileSub1.style.height = profile.offsetHeight + "px";
+			profileSub1.style.lineHeight = "25px";
+			profileSub1.style.display = "inline-block";
+			profileSub1.innerText = "患者姓名:" + groupedDataSoucre[0]["patientName"];
+			profile.appendChild(profileSub1);
+			var profileSub2 = document.createElement("div");
+			profileSub2.style.width = section.offsetWidth * 0.3 + "px";
+			profileSub2.style.height = section.offsetHeight + "px";
+			profileSub2.style.lineHeight = "25px";
+			profileSub2.style.display = "inline-block";
+			profileSub2.innerText = "医生姓名: " + groupedDataSoucre[0]["doctorName"];
+			profile.appendChild(profileSub2);		
+			var profileSub3 = document.createElement("div");
+			profileSub3.style.width = section.offsetWidth * 0.4 + "px";
+			profileSub3.style.height = section.offsetHeight + "px";
+			profileSub3.style.lineHeight = "25px";
+			profileSub3.style.display = "inline-block";
+			profileSub3.innerText = "订单号:" + (ifNeedDeletion == true ? createMainNumber() : groupedDataSoucre[0]["orderNumber"]);
+			profile.appendChild(profileSub3);							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		function createMainNumber(){
+			var currentTime = new Date();
+			var currentYear = currentTime.getFullYear().toString();
+			var currentMonth = currentTime.getMonth() + 1;
+			if(currentMonth < 10){
+				currentMonth = "0" + currentMonth.toString();
+			}
+			var currentDay = currentTime.getDate();
+			if (currentDay < 10) {
+				currentDay = "0" + currentDay.toString();
+			}
+			var currentHour = currentTime.getHours();
+			if (currentHour < 10) {
+				currentHour = "0" + currentHour.toString();
+			}
+			var currentMinute = currentTime.getMinutes();
+			if (currentMinute < 10) {
+				currentMinute = "0" + currentMinute.toString();
+			}
+			var currentSecond = currentTime.getSeconds();
+			if (currentSecond < 10) {
+				currentSecond = "0" + currentSecond.toString();
+			}
+			var a = parseInt(Math.random() * 10).toString();
+			var b = parseInt(Math.random() * 10).toString();
+			var c = parseInt(Math.random() * 10).toString();
+			var d = parseInt(Math.random() * 10).toString();
+			var e = parseInt(Math.random() * 10).toString();
+			var f = parseInt(Math.random() * 10).toString();
+			return currentYear + currentMonth + currentDay + currentHour + currentSecond + a + b + c + d + e + f;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	</script>
+</body>
+</html>

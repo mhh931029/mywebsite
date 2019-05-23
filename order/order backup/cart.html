@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="cart_style.css">
+	<title>购物车</title>
+	<script type="text/javascript" src="../helper/request.js"></script>
+</head>
+<body>
+	<div id="box">
+		<div id="header">
+			<img style="width: 17%; height: 100%;" src="img/logo.png">
+			<img style="width: 17%; height: 100%; margin-left: 20px;" src="img/logo2.png">
+			<input id="final_submit_btn" type="button" value="下单" onclick="finalSubmit()">
+			<input id="cancel_btn" type="button" value="返回" onclick="cancelAction()">
+			<a id="total_amount">参考总价: </a>
+		</div>
+		<div id="main">
+			<div id="show_profile">
+				<table border="1" id="profile_table_1">
+					<tr>
+						<td style="width: 12%; border-bottom: none;">医院名称</td>
+						<td style="width: 88%; border-bottom: none;" id="show_clinic_name"></td>
+					</tr>
+				</table>
+				<table border="1" id="profile_table_2">
+					<tr>
+						<td style="width: 12%;">收件日期</td>
+						<td style="width: 38%;"><a id="show_order_year" style="width: 17.5%; margin-left: 1%;"></a>年<a id="show_order_month" style="width: 17.5%;"></a>月<a id="show_order_day" style="width: 17.5%;"></a>日<a id="show_order_hour" style="width: 17.5%;"></a>时</td>
+						<td style="width: 12%;">出件日期</td>
+						<td style="width: 38%;"><a id="show_delivery_year" style="width: 17.5%; margin-left: 1%;"></a>年<a id="show_delivery_month" style="width: 17.5%;"></a>月<a id="show_delivery_day" style="width: 17.5%;"></a>日<a id="show_delivery_hour" style="width: 17.5%;"></a>时</td>
+					</tr>
+				</table>
+			</div>
+			<div id="show_products">
+			</div>
+			<div id="show_otherinfo">
+				<div id="otherinfo_div1">
+					<h3 style="width: 16%;">试做信息</h3>
+				</div>
+				<div id="otherinfo_div2">
+					<h3 style="width: 16%;">随单附品</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="cart_function.js"></script>
+</html>

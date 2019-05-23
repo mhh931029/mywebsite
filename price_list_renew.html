@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>价格表更新页</title>
+	<style type="text/css">
+		#price_table{
+			border-collapse: collapse;
+		}
+		input{
+			border-style: none;
+			outline: none;
+		}
+		.title{
+			text-align: center;
+		}
+		.title td{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<form id="price_list_form" action="http://www.maierlefu.com/mywebsite/php/insert_price_list_db.php" method="post">
+		<table style="width: 100%;" border="1" id="price_table">
+			<!-- 种植类 -->
+			<tr>
+				<td colspan="5">种植类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">韩国纯钛个性化一体冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_hanguo_chuntai_gexinghuayitiguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_hanguo_chuntai_gexinghuayitiguan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">欧美纯钛个性化一体冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_oumei_chuntai_gexinghuayitiguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_oumei_chuntai_gexinghuayitiguan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">国产氧化锆个性化一体冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_guochanyanghuagao_gexinghuayitiguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_guochanyanghuagao_gexinghuayitiguan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">威兰德个性化一体冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_weilande_gexinghuayitiguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_weilande_gexinghuayitiguan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">BEGO钴铬个性化一体冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bego_guge_gexinghuayitiguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bego_guge_gexinghuayitiguan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">种植杆卡</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_zhongzhiganka" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_zhongzhiganka_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">韩国纯钛个性化基台</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_hanguo_chuntai_gexinghuajitai" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_hanguo_chuntai_gexinghuajitai_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">韩国氧化锆个性化基台</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_hanguo_yanghuagao_gexinghuajitai" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_hanguo_yanghuagao_gexinghuajitai_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">欧美纯钛个性化基台</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_oumei_chuntai_gexinghuajitai" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_oumei_chuntai_gexinghuajitai_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">欧美氧化锆个性化基台</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_oumei_yanghuagao_gexinghuajitai" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_oumei_yanghuagao_gexinghuajitai_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+
+
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">氧化锆全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_yanghuagao_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_yanghuagao_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">威兰德全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_weilande_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_weilande_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">变色龙全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bianselong_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bianselong_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">氧化锆全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_yanghuagao_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_yanghuagao_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">威兰德全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_weilande_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_weilande_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">变色龙全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bianselong_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bianselong_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">BEGO钴铬冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bego_guge_guan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bego_guge_guan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">BEGO钴铬烤瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bego_guge_kaoci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_bego_guge_kaoci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">3D打印钴铬冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_guge_guan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_guge_guan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">3D打印钴铬烤瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_guge_kaoci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_guge_kaoci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">3D打印纯钛冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_chuntai_guan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_chuntai_guan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">3D打印纯钛烤塑</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_chuntai_kaosu" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_chuntai_kaosu_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">3D打印导板（含一孔）</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_daoban" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_daoban_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">3D打印导板(每增加一孔)</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_daoban_meiduoyikong" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_sandi_daoban_meiduoyikong_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">Aregen金烤塑牙59.9%</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaosu_ya_59_9_percent" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaosu_ya_59_9_percent_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">Aregen金烤塑牙74%</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaosu_ya_74_percent" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaosu_ya_74_percent_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">Aregen金烤塑牙89.5%</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaosu_ya_89_5_percent" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaosu_ya_89_5_percent_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">Aregen金烤瓷牙74%</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaoci_ya_74_percent" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaoci_ya_74_percent_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">Aregen金烤瓷牙89.5%</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaoci_ya_89_5_percent" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="zhongzhi_aregen_jin_kaoci_ya_89_5_percent_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<!-- 固定类 -->
+			<tr>
+				<td  colspan="5">固定类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">国产氧化锆全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_guochanyanghuagao_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_guochanyanghuagao_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">国产氧化锆全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_guochanyanghuagao_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_guochanyanghuagao_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">国产氧化锆桩核</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_guochanyanghuagao_zhuanghe" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_guochanyanghuagao_zhuanghe_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">威兰德全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_weilande_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_weilande_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">威兰德全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_weilande_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_weilande_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">LAVA全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_lava_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_lava_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">LAVA全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_lava_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_lava_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">变色龙全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_bianselong_quangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_bianselong_quangao_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">变色龙全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="guding_bianselong_quanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="guding_bianselong_quanci_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印钴铬桩核</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_zhuanghe" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_zhuanghe_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印钴铬嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_qianti" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_qianti_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印钴铬冠</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_guan" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_guan_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印钴铬烤瓷</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_kaoci" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_guge_kaoci_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印纯钛桩核</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_zhuanghe" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_zhuanghe_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印纯钛嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_qianti" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_qianti_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印纯钛冠</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_guan" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_guan_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印纯钛聚合瓷</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_juheci" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_sandi_chuntai_juheci_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO钴铬桩核</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_zhuanghe" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_zhuanghe_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO钴铬嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_qianti" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_qianti_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO钴铬冠</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_guan" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_guan_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO钴铬烤瓷</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_kaoci" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_kaoci_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO钴铬聚合瓷</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_juheci" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_bego_guge_juheci_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">聚合瓷嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_juheci_qianti" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_juheci_qianti_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen59.9%金烤瓷牙</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaoci_ya_59_9_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaoci_ya_59_9_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen74%金烤瓷牙</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaoci_ya_74_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaoci_ya_74_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen89.5%金烤瓷牙</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaoci_ya_89_5_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaoci_ya_89_5_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen59.9%金烤塑牙</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaosu_ya_59_9_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaosu_ya_59_9_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen74%金烤塑牙</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaosu_ya_74_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaosu_ya_74_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen89.5%金烤塑牙</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaosu_ya_89_5_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_kaosu_ya_89_5_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen59.9%金冠</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_guan_59_9_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_guan_59_9_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen74%金冠</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_guan_74_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_guan_74_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen89.5%金冠</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_guan_89_5_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_guan_89_5_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen59.9%金嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_qianti_59_9_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_qianti_59_9_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen74%金嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_qianti_74_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_qianti_74_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen89.5%金嵌体</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_qianti_89_5_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_qianti_89_5_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen59.9%金桩核</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_zhuanghe_59_9_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_zhuanghe_59_9_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen74%金桩核</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_zhuanghe_74_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_zhuanghe_74_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">Aregen89.5%金桩核</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_zhuanghe_89_5_percent" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_aregen_jin_zhuanghe_89_5_percent_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">临时冠CAD</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_linshiguan_cad" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_linshiguan_cad_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">临时冠CAM</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_linshiguan_cam" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_linshiguan_cam_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">蜡型设计</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_laxingsheji" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_laxingsheji_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">肩台瓷</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_jiantaici" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_jiantaici_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">牙龈瓷</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="guding_yayinci" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="guding_yayinci_beizhu" style="width: 98%"></td>
+			</tr>
+			<!-- 活动类 -->
+			<tr>
+				<td colspan="5">活动类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印钴铬大支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_da_guge" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_da_guge_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印钴铬小支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_xiao_guge" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_xiao_guge_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印纯钛大支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_da_chuntai" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_da_chuntai_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">3D打印纯钛小支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_xiao_chuntai" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_sandi_zhijia_xiao_chuntai_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO大支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_da_bego" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_da_bego_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">诺比灵大支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_da_nuobiling" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_da_nuobiling_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">维他灵 2000大支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_da_weitaling_2000" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_da_weitaling_2000_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">BEGO小支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_xiao_bego" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_xiao_bego_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">诺比灵小支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_xiao_nuobiling" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_xiao_nuobiling_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">维他灵 2000小支架</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_xiao_weitaling_2000" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhijia_xiao_weitaling_2000_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">凯丰注塑煮牙</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaifeng_zhusuzhuya" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaifeng_zhusuzhuya_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">凯丰排牙人工费</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaifeng_zhusuzhuya_labor" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaifeng_zhusuzhuya_labor_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">凯晶注塑煮牙</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaijing_zhusuzhuya" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaijing_zhusuzhuya_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">凯晶排牙人工费</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaijing_zhusuzhuya_labor" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_kaijing_zhusuzhuya_labor_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">松风注塑煮牙</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_shofu_zhusuzhuya" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_shofu_zhusuzhuya_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">松风排牙人工费</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_shofu_zhusuzhuya_labor" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_shofu_zhusuzhuya_labor_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">长正中普通注塑煮牙</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_putong_zhusuzhuya" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_putong_zhusuzhuya_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">长正中普通注塑煮牙排牙人工费</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_putong_zhusuzhuya_labor" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_putong_zhusuzhuya_labor_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">长正中超硬注塑煮牙</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_chaoying_zhusuzhuya" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_chaoying_zhusuzhuya_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">长正中超硬注塑煮牙排牙人工费</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_chaoying_zhusuzhuya_labor" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_paiya_changzhengzhong_chaoying_zhusuzhuya_labor_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">塑料托牙</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_suliaotuoya" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_suliaotuoya_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">个性化托盘</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_gexinghuatuopan" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_gexinghuatuopan_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">金属颌垫</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_jinshuhedian" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_jinshuhedian_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">金属颌面</td>
+				<td style="width: 5%">颗</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_jinshuhemian" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_jinshuhemian_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">铸造颌支托</td>
+				<td style="width: 5%">个</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_zhuzaohezhituo" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_zhuzaohezhituo_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">成品网</td>
+				<td style="width: 5%">个</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_chengpinwang" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_jiaotuo_chengpinwang_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">隐形义齿(大)</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_yinxingyichi_da" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_yinxingyichi_da_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">隐形义齿(小)</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_yinxingyichi_xiao" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_yinxingyichi_xiao_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">注塑煮牙(半口)</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhusuzhuya_bankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhusuzhuya_bankou_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">注塑煮牙(全口)</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhusuzhuya_quankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="huodong_zhusuzhuya_quankou_beizhu" style="width: 98%"></td>
+			</tr>
+			<!-- 美学类 -->
+			<tr>
+				<td colspan="5">美学类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">好莱坞魅白超薄贴面</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_meibaichaobaotiemian" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_meibaichaobaotiemian_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">迈尔仿生全锆</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_maierfangshengquangao" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_maierfangshengquangao_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">迈尔仿生全瓷</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_maierfangshengquanci" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_maierfangshengquanci_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">铸瓷全冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_zhuci_quanguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_zhuci_quanguan_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">铸瓷嵌体</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_zhuci_qianti" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_zhuci_qianti_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">玻璃陶瓷贴面</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_bolitaoci_tiemian" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_bolitaoci_tiemian_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">玻璃陶瓷嵌体</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_bolitaoci_qianti" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_bolitaoci_qianti_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">玻璃陶瓷全冠</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_bolitaoci_quanguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_bolitaoci_quanguan_beizhu" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">美学诊断蜡</td>
+				<td style="width: 5%;">颗</td>
+				<td style="width: 25%;"><input type="text" name="meixue_meixuezhenduanla" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="meixue_meixuezhenduanla_beizhu" style="width: 98%;"></td>
+			</tr>
+			<!-- 正畸类 -->
+			<tr>
+				<td colspan="5">正畸类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">隐形保持器(半口)</td>
+				<td style="width: 5%">个</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_yinxingbaochiqi_bankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_yinxingbaochiqi_bankou_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">弯制保持器(半口)</td>
+				<td style="width: 5%">个</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_wanzhibaochiqi_bankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_wanzhibaochiqi_bankou_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">间隙保持器</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_jianxibaochiqi" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_jianxibaochiqi_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">夜磨牙套</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_yemoyatao" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_yemoyatao_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">矫治器(半口)</td>
+				<td style="width: 5%">个</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_jiaozhengqi_bankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_jiaozhengqi_bankou_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">螺旋扩弓器</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_luoxuankuogongqi" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_luoxuankuogongqi_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">阻鼾器</td>
+				<td style="width: 5%">件</td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_zuhanqi" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="zhengji_zuhanqi_beizhu" style="width: 98%"></td>
+			</tr>
+			<!-- 精密附件类 -->
+			<tr>
+				<td colspan="5">精密附件类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">栓道附着体</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_shuandaofuzhuoti" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_shuandaofuzhuoti_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">球帽式附着体</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_qiumaofuzhuoti" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_qiumaofuzhuoti_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">磁性附着体</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_cixingfuzhuoti" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_cixingfuzhuoti_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">MK1</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_mk1" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_mk1_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">太极扣</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_taijikou" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_taijikou_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%;">套筒冠</td>
+				<td style="width: 5%;">件</td>
+				<td style="width: 25%;"><input type="text" name="jingmifujian_taotongguan" value="" style="width: 98%;"></td>
+				<td style="width: 25%;"><input type="text" value="" name="jingmifujian_taotongguan_beizhu" value="" style="width: 98%;"></td>
+			</tr>
+			<!-- 3D树脂模型类 -->
+			<tr>
+				<td colspan="5">3D树脂模型类</td>
+			</tr>
+			<tr class="title">
+				<td style="width: 5%;">序号</td>
+				<td style="width: 40%;">名称</td>
+				<td style="width: 5%;">单位</td>
+				<td style="width: 25%;">单价</td>
+				<td style="width: 25%;">备注</td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">半口树脂模型(需要配合扫描)</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="sandi_shuzhimoxing_bankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="sandi_shuzhimoxing_bankou_beizhu" style="width: 98%"></td>
+			</tr>
+			<tr>
+				<td style="width: 5%;" class="sierial_num"></td>
+				<td style="width: 40%">全口树脂模型(需要配合扫描)</td>
+				<td style="width: 5%">副</td>
+				<td style="width: 25%"><input type="text" value="" name="sandi_shuzhimoxing_quankou" style="width: 98%"></td>
+				<td style="width: 25%"><input type="text" value="" name="sandi_shuzhimoxing_quankou_beizhu" style="width: 98%"></td>
+			</tr>		
+		</table>
+		<input type="submit" value="提交变更">
+	</form>
+</body>
+</html>
+<script type="text/javascript" src="price_list_renew_function.js"></script>

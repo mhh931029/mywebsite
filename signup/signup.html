@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<link rel="stylesheet" type="text/css" href="signup_style.css">
+	<title>注册</title>
+</head>
+<body>
+	<div id="box">
+		<form id="signup" action="http://www.maierlefu.com/mywebsite/php/insert_client_db.php" method="post">
+			<div id="header">
+				<img style="width: 250px; height: 50px;" src="img/logo.png">
+				<img style="width: 250px; height: 50px; margin-left: 20px;" src="img/logo2.png">
+			</div>
+			<div id="main">
+				<div id="username" class="line">
+					<img src="img/username.png">
+					<input id="username_input" type="text" name="username" placeholder="用户名" autocomplete="off" style="ime-mode: disabled;">
+				</div>
+				<div id="password" class="line">
+					<img src="img/password.png">
+					<input id="password_input" type="password" name="password" placeholder="密&nbsp;&nbsp;&nbsp;&nbsp;码" autocomplete="off">
+				</div>
+				<div id="retype_password" class="line">
+					<img src="img/password.png">
+					<input id="retype_password_input" type="password" name="retypepassword" placeholder="确认密码" autocomplete="off">
+				</div>
+				<div id="invitation_code" class="line">
+					<img src="img/invitation.png">
+					<input id="invitation_code_input" type="text" name="invitationcode" placeholder="邀请码" autocomplete="off">
+				</div>
+				<div id="clinic_name" class="line">
+					<img src="img/clinic.png">
+					<input id="clinic_name_input" type="text" name="clinicname" placeholder="诊所名称" autocomplete="off">
+				</div>
+				<div id="clinic_contact" class="line">
+					<img src="img/phone.png">
+					<input id="clinic_phone_input" type="text" name="clinicphone" placeholder="诊所联系电话" autocomplete="off">
+				</div>
+				<div id="submit">
+					<input id="signup_button" type="submit" value="立即注册" onclick="return checkForm(this.form);"">
+				</div>
+			</div>
+		</form>
+	</div> 
+</body>
+<script type="text/javascript" src="signup_function.js"></script>
+<script type="text/javascript" src="../helper/request.js"></script>
+</html>

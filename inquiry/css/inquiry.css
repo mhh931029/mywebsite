@@ -1,0 +1,26 @@
+*{margin: 0;padding: 0;}
+body{background: skyblue; font-family: "Microsoft YaHei";}
+#box{margin: 0 auto;}
+#header{width: 100%; background: white;}
+#header_content{width: 90%; margin: 0 auto;}
+#header_div_img{width: 50%; display: block; display: inline-block;}
+#header_img{width: 55%;margin-top: 1%;margin-bottom: 0.5%; cursor: pointer;}
+#header_button{width: 49%; display: inline-block;}
+#header_button ul li{list-style: none; float: right; margin-left: 8%;margin-bottom: 3%;}
+#header_button ul li button{color: #333; background-color: #fff;border-color: #ccc; display: inline-block; padding: 8px 14px; font-size: 14px;font-weight: normal; cursor: pointer; border-radius: 4px; user-select: none; border: 1px solid #333;}
+
+#content{ width:80%;margin:0 auto;}
+#container{width: 90%;margin: 0 auto;}
+#headh1 div{display: inline-block; width: 24%; margin:4% 0% ;}
+.h1style h1{ color:#333;font-size: 36px; text-align: center; font-family: "Microsoft YaHei"; font-weight: 300;}
+#page{
+	/* text-align: center; */
+	width: 78%;
+	margin: 0 auto;
+	margin-top: 10px;
+	font-size: 20px;
+}
+#page a{
+	text-decoration: none;
+	
+}

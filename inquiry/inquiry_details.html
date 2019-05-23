@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/inquiry_details.css">
+	<link rel="stylesheet" type="text/css" href="css/barcode.css">
+	<script type="text/javascript" src="../helper/listInquiryResult.js"></script>
+	<script type="text/javascript" src="../helper/request.js"></script>
+	<script type="text/javascript" src="../helper/cookieOperations.js"></script>
+	<title>详情</title>
+</head>
+<body>
+	<div id="top">
+		<img src="img/logo.png">
+		<input class="top_btns" id="btn1" type="button" name="" value="返回">
+		<input class="top_btns" id="btn2" type="button" name="" value="打印">
+	</div>
+	<div id="middle">
+		<div id="middle_sub1">订单详情</div>
+		<div id="middle_sub2">
+			<table id="order_profile" border="1">
+				<tr>
+					<td>医生姓名</td>
+					<td>患者姓名</td>
+					<td>下单日期</td>
+					<td>订单编号</td>
+				</tr>
+				<tr>
+					<td id="doctor_name"></td>
+					<td id="patient_name"></td>
+					<td id="order_date"></td>
+					<td id="order_number"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="middle_sub3"></div>
+	</div>
+	<div id="bottom">
+		<div id="otherinfo_div1">
+			<h3>试做信息</h3>
+		</div>
+		<div id="otherinfo_div2">
+			<h3>随单附品</h3>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/inquiry_details.js"></script>
+</html>

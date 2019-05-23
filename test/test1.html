@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组元素分组排列</title>
+</head>
+<body>
+	<script>
+		var rawArr = Array("a", "b", "c", "b", "b", "a", "c", "c");
+		for (var i = 0; i < rawArr.length; i ++) {
+			var item = rawArr[i];
+			var arrOfSame = new Array();
+			var arrOfDiff = new Array();
+			for (var j = 0; j < rawArr.length; j ++) {
+				if (rawArr[j] == item) {
+					arrOfSame.push(j);
+				}
+				if (rawArr[j] != item) {
+					arrOfDiff.push(j);
+				}
+			}
+			for (var k = 0; k < arrOfSame.length; k ++) {
+				var temp = rawArr[arrOfSame[k]];
+				rawArr.splice(arrOfDiff[0], 0, temp);
+				rawArr.splice(arrOfSame[k] + 1, 1);
+			}
+		}
+		console.log(rawArr);
+	</script>
+</body>
+</html>

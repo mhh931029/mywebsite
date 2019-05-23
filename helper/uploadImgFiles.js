@@ -1,0 +1,144 @@
+/**
+ *参数1: 服务器地址
+ *参数2: 选择完图片后是否显示预览图
+ */
+function uploadImgFiles(serverURL, whetherShowPreview, whetherShowResult) {
+	var body = document.getElementsByTagName("body")[0];
+	var functionArea = document.createElement("div");
+	functionArea.uploadSuccess = "false";
+	functionArea.style.margin = "auto auto";
+	functionArea.style.width = body.clientWidth * 0.8 + "px";
+	functionArea.style.height = body.clientWidth * 0.8 * 1080 / 1920 + "px";
+	functionArea.style.border = "1px solid black";
+	functionArea.style.boxShadow = "0 0 10px black";
+	body.appendChild(functionArea);
+	var fileInput = document.createElement("input");
+	fileInput.type = "file";
+	fileInput.multiple = true;
+	// fileInput.accept = "image/*";
+	fileInput.onchange = function(){
+		for (var i = 0; i < this.files.length; i ++) {
+			var ext = this.files[i]["name"].substring(this.files[i]["name"].lastIndexOf(".")).toLowerCase();
+			if (ext != ".jpg" && ext != ".jpeg" && ext != ".png" && ext != ".tiff" && ext!= ".tif" && ext != ".gif" && ext != ".bmp") {
+				alert("文件只能为图片格式!");
+				this.value = "";
+				return;
+			}
+		}
+		if (whetherShowPreview || whetherShowPreview == undefined) {
+			while (resultDiv.hasChildNodes()) {
+				resultDiv.removeChild(resultDiv.lastChild);
+			}
+			for (var i = 0; i < this.files.length; i ++) {
+				var reader = new FileReader();
+				reader.readAsDataURL(this.files[i]);
+				reader.onload = function(){
+					var result = this.result;
+					var src = result;
+					var photo = document.createElement("img");
+					photo.src = src;
+					photo.width = photo.width / photo.height * 200;
+					photo.height = 200;
+					var photoDiv = document.createElement("div");
+					photoDiv.style.width = photo.width + "px";
+					photoDiv.style.height = photo.height + "px";
+					photoDiv.style.boxShadow = "5px 5px 5px gray";
+					photoDiv.style.marginRight = 5 + "px";
+					photoDiv.style.display = "inline-block";
+					photoDiv.appendChild(photo);
+					resultDiv.appendChild(photoDiv);
+				}
+			}
+		}else{
+			while (resultDiv.hasChildNodes()) {
+				resultDiv.removeChild(resultDiv.lastChild);
+			}
+		}
+	}
+	functionArea.appendChild(fileInput);
+	var uploadBtn = document.createElement("input");
+	uploadBtn.type = "button";
+	uploadBtn.value = "上传";
+	functionArea.appendChild(uploadBtn);
+	var cancelBtn = document.createElement("input");
+	cancelBtn.type = "button";
+	cancelBtn.value = "取消";
+	cancelBtn.style.float = "right";
+	functionArea.appendChild(cancelBtn);
+	cancelBtn.onclick = function(){
+		body.removeChild(functionArea);
+	}
+	var resultDiv = document.createElement("div");
+	resultDiv.style.padding = "5px 5px";
+	functionArea.appendChild(resultDiv);
+	uploadBtn.onclick = function(){
+		var formData = new FormData();
+	    for (var i = 0; i < fileInput.files.length; i ++) {
+	    	formData.append("photo" + i, fileInput.files[i]);
+	    }
+	    var URL = serverURL;
+	    var postBody = formData;
+	    requestByPOSTWithFileUpload(URL, postBody, function(response){
+	    	if (whetherShowResult || whetherShowResult == undefined) {
+	    		fileInput.value = "";
+	    		var json = JSON.parse(response);//注意:解析以后生成是对象,不是数组!!!
+	    		console.log(json);
+		    	while (resultDiv.hasChildNodes()) {
+					resultDiv.removeChild(resultDiv.lastChild);
+				}
+				var upperDiv = document.createElement("div");
+	    		upperDiv.style.height = 20 + "px";
+	    		upperDiv.innerText = "以下照片已上传:";
+	    		resultDiv.appendChild(upperDiv);
+		    	for (var key in json) {
+		    		var photo = document.createElement("img");
+		    		photo.src = json[key]["photo_name"];
+		    		var photoWidth = json[key]["photo_resolution"]["width"];
+		    		var photoHeight = json[key]["photo_resolution"]["height"];
+		    		photo.width = photoWidth / photoHeight * 180;
+		    		photo.height = 180;
+		    		var photoDiv = document.createElement("div");
+					photoDiv.style.width = photo.width + "px";
+					photoDiv.style.height = photo.height + "px";
+					photoDiv.style.boxShadow = "5px 5px 5px gray";
+					photoDiv.style.marginRight = 5 + "px";
+					photoDiv.style.display = "inline-block";
+					photoDiv.appendChild(photo);
+		    		resultDiv.appendChild(photoDiv);
+		    	}
+	    	}else{
+	    		fileInput.value = "";
+	    		while (resultDiv.hasChildNodes()) {
+					resultDiv.removeChild(resultDiv.lastChild);
+				}
+				alert ("上传成功");
+				body.removeChild(functionArea);
+	    	}
+	    }, function(response){
+	    	if (response == "" || !response) {
+	    		alert ("上传失败");
+	    	}
+	    });
+	    return false;//阻止浏览器对事件的默认处理
+	}
+	function requestByPOSTWithFileUpload(url, postbody, successCallback, errorCallback){
+		if (window.XMLHttpRequest) {
+			var request = new XMLHttpRequest();
+		}else{
+			var request = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		request.open("POST", url, true);
+		request.send(postbody);
+		request.onreadystatechange = function(){
+			if (request.readyState == 4 && request.status == 200) {
+				if(successCallback){
+					successCallback(request.responseText);
+				}
+			}else if(request.readyState == 4 && request.status != 200){
+				if (errorCallback) {
+					errorCallback(request.statusText);
+				}
+			}
+		}
+	}
+}

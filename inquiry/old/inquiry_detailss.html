@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/details.css">
+	<link rel="stylesheet" type="text/css" href="css/barcode.css">
+</head>
+<body>
+<!-- 头部 -->
+<div class="container">
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+     <div class="navbar-header">
+           <a class="navbar-brand logo" href="http://localhost/mywebsite/mainpage/mainpage.html">
+              <img src="../communication/img/logo.png" alt="">
+           </a>
+           <!-- <a class="navbar-brand logo" href="#">
+              <img src="../communication/img/logo2.png" alt="">
+           </a> -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+      </div>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="nav navbar-nav navbar-right open ">
+                <li>
+                	<button type="submit" class="btn btn-default" role="group" onclick="print()">打印</button>
+                	<button type="submit" class="btn btn-default" role="group" id="btn2">返回</button>
+                </li>
+            </ul>
+      </div>
+    </div>
+  </nav> 
+</div>
+<!-- 中間部分 -->
+<h1 class="col-md-offset-5" style="margin-top: 0px;margin-bottom: 0px">订单详情</h1>
+<div class="container">
+	<div id="box1">
+		<table border="1" style="background-color: skyblue;">
+			<tr>
+				<td style="width: 19%;height:30px">医生姓名</td>
+				<td style="width: 17%">患者姓名</td>
+				<td style="width: 17%">联系方式</td>
+				<td style="width: 17%">下单日期</td>
+				<td style="width: 17%">金额</td>
+				<td style="width: 17%">订单编号</td>
+			</tr>
+			<tr>
+				<td style="width: 17%;height:30px" id="doctorName"></td>
+				<td id="patientName"></td>
+				<td id="patientPhone"></td>
+				<td id="times"></td>
+				<td id="price"></td>
+				<td id="orderNumber"></td>
+			</tr>
+		</table>
+		</div>
+</div>
+	<div id="box2">
+		<div id="guideline" class="container">
+			<div id="box2_1" class="col-md-3">产品名称</div>
+			<div id="box2_2" class="col-md-1">牙位/半口</div>
+			<div id="box2_3" class="col-md-1">连冠/单冠</div>
+			<div id="box2_4" class="col-md-1">比色系统</div>
+			<div id="box2_5" class="col-md-1">基牙色</div>
+			<div id="box2_6" class="col-md-1">比色/排牙信息</div>
+			<div id="box2_7" class="col-md-1">数量</div>
+			<div id="box2_8" class="col-md-1">单价</div>
+			<div id="box2_9" class="col-md-1">附加费用</div>
+			<div id="box2_10" class="col-md-1">医生说明</div>
+		</div>
+		<div id="details" class="container">
+		</div>
+	</div>
+	<div id="box4" class="container">
+		<div id="oBox1" class="col-md-6">
+			<h4>试做信息</h4>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ins  id="txt1" class="text-uppercase size"></ins>
+		</div>
+		<div id="oBox2"  class="col-md-6">
+			<h4>随单附品</h4>
+			<ins class="text-uppercase size" id="txt2"></ins>
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="js/details.js"></script>
+<script src="js/jquery.PrintArea.js"></script>
+</body>
+</html>

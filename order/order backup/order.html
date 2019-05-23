@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="order_style.css">
+	<title>下单录入</title>
+	<script type="text/javascript" src="../helper/request.js"></script>
+</head>
+<body>
+	<div id="box">
+		<div id="header">
+			<img style="width: 17%; height: 100%;" src="img/logo.png">
+			<img style="width: 17%; height: 100%; margin-left: 20px;" src="img/logo2.png">
+			<input id="check_cart_btn" type="button" value="购物车" onclick="checkCart()">
+		</div>
+		<div id="doctor_patient_profile">
+			<table border="1" id="profile_table_1">
+				<tr>
+					<td style="width: 12%; border-bottom: none;">医院名称</td>
+					<td style="width: 26%; border-bottom: none;"><input id="clinic_name" type="text" name="yiyuanmingcheng" autocomplete="on"></td>
+					<td style="width: 12%; border-bottom: none;">医生姓名</td>
+					<td style="width: 19%; border-bottom: none;"><input id="doctor_name" type="text" name="yishengxingming" autocomplete="on"></td>
+					<td style="width: 12%; border-bottom: none;">医生电话</td>
+					<td style="width: 19%; border-bottom: none;"><input id="doctor_phone" type="text" name="yishengdianhua" autocomplete="on"></td>
+				</tr>
+			</table>
+			<table border="1" id="profile_table_2">
+				<tr>
+					<td style="width: 12%; border-bottom: none;">患者姓名</td>
+					<td style="width: 20%; border-bottom: none;"><input id="patient_name" type="text" name="huanzhexingming" autocomplete="off"></td>
+					<td style="width: 6%; b_-bottom: none;">年龄</td>
+					<td style="width: 12%; border-bottom: none;"><input id="patient_age" type="text" name="nianling" autocomplete="off"></td>
+					<td style="width: 6%; border-bottom: none;">性别</td>
+					<td style="width: 13%; border-bottom: none; padding-top: 4px;"><input id="patient_sex_male" type="radio" name="xingbie" value="male" style="width: 20%; margin-left: 5%;">男<input id="patient_sex_female" type="radio" name="xingbie" value="female" style="width: 20%; margin-left: 5%;">女</td>
+					<td style="width: 12%; border-bottom: none;">患者电话</td>
+					<td style="width: 19%; border-bottom: none;"><input id="patient_phone" type="text" name="huanzhedianhua" autocomplete="off"></td>
+				</tr>
+			</table>
+			<table border="1" id="profile_table_3">
+				<tr>
+					<td style="width: 12%;">收件日期</td>
+					<td style="width: 38%;"><a id="order_year" name="order_year" style="width: 17.5%; margin-left: 1%; margin-right: 1%;"></a>年<a id="order_month" name="order_month" style="width: 17.5%; margin-left: 1%; margin-right: 1%;"></a>月<a id="order_day" name="order_day" style="width: 17.5%; margin-left: 1%; margin-right: 1%;"></a>日<a id="order_hour" name="order_hour" style="width: 17.5%; margin-left: 1%; margin-right: 1%;"></a>时</td>
+					<td style="width: 12%;">出件日期</td>
+					<td style="width: 38%;"><input id="delivery_year" type="text" name="delivery_year" style="width: 17.5%; margin-left: 1%;" autocomplete="off">年<input id="delivery_month" type="text" name="delivery_month" style="width: 17.5%;" autocomplete="off">月<input id="delivery_day" type="text" name="delivery_day" style="width: 17.5%;" autocomplete="off">日<input id="delivery_hour" type="text" name="delivery_hour" style="width: 17.5%;" autocomplete="off">时</td>
+				</tr>
+			</table>
+		</div>
+		<div id="main">
+			<div id="main1">
+				<div id="left">
+					<ul id="leftUl">
+						<li class="listText" style=" background-color: skyblue">种植类(3D打印/普通)</li>
+						<li class="listText">固定类(3D打印/普通)</li>
+						<li class="listText">活动类(3D打印/普通)</li>
+						<li class="listText">美学类</li>
+						<li class="listText">正畸类</li>
+						<li class="listText">精密附件</li>
+						<li class="listText" style="margin-bottom: 30px;">3D打印树脂模型</li>
+					</ul>
+				</div>
+				<div id="right">
+					
+					<div class="listRight"  style="display: block; overflow: auto;">
+						<h3>个性化一体冠</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_hanguo_chuntai_gexinghuayitiguan" class="product_link" href="javascript:;">韩国纯钛个性化一体冠</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_oumei_chuntai_gexinghuayitiguan" class="product_link" href="javascript:;">欧美纯钛个性化一体冠</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_guochanyanghuagao_gexinghuayitiguan" class="product_link" href="javascript:;">国产氧化锆个性化一体冠</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="zhongzhi_weilande_gexinghuayitiguan" class="product_link" href="javascript:;">威兰德个性化一体冠</a></td>
+								<td><a id="zhongzhi_bego_guge_gexinghuayitiguan" class="product_link" href="javascript:;">BEGO钴铬个性化一体冠</a></td>
+								<td></td>
+							</tr>
+						</table>
+						<h3>种植杆卡</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_zhongzhiganka" class="product_link" href="javascript:;">种植杆卡</a></td>
+								<td style="width: 33.3%;"></td>
+								<td style="width: 33.3%;"></td>
+							</tr>
+						</table>
+						<h3>个性化基台</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 25%; height: 32px;"><a id="zhongzhi_hanguo_chuntai_gexinghuajitai" class="product_link" href="javascript:;">韩国纯钛个性化基台</a></td>
+								<td style="width: 25%;"><a id="zhongzhi_hanguo_yanghuagao_gexinghuajitai" class="product_link" href="javascript:;">韩国氧化锆个性化基台</a></td>
+								<td style="width: 25%"><a id="zhongzhi_oumei_chuntai_gexinghuajitai" class="product_link" href="javascript:;">欧美纯钛个性化基台</a></td>
+								<td style="width: 25%;"><a id="zhongzhi_oumei_yanghuagao_gexinghuajitai" class="product_link" href="javascript:;">欧美氧化锆个性化基台</a></td>
+							</tr>
+						</table>
+						<h3>全锆</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_yanghuagao_quangao" class="product_link" href="javascript:;">氧化锆全锆</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_weilande_quangao" class="product_link" href="javascript:;">威兰德全锆</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_bianselong_quangao" class="product_link" href="javascript:;">变色龙全锆</a></td>
+							</tr>
+						</table>
+						<h3>全瓷</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_yanghuagao_quanci" class="product_link" href="javascript:;">氧化锆全瓷</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_weilande_quanci" class="product_link" href="javascript:;">威兰德全瓷</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_bianselong_quanci" class="product_link" href="javascript:;">变色龙全瓷</a></td>
+							</tr>
+						</table>
+						<h3>钴铬冠</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_bego_guge_guan" class="product_link" href="javascript:;">BEGO钴铬冠</a></td>
+								<td style="width: 33.3%;"></td>
+								<td style="width: 33.3%;"></td>
+							</tr>
+						</table>
+						<h3>钴铬烤瓷</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_bego_guge_kaoci" class="product_link" href="javascript:;">BEGO钴铬烤瓷</a></td>
+								<td style="width: 33.3%;"></td>
+								<td style="width: 33.3%;"></td>
+							</tr>
+						</table>
+						<h3>3D打印类</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_sandi_guge_guan" class="product_link" href="javascript:;">3D打印钴铬冠</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_sandi_guge_kaoci" class="product_link" href="javascript:;">3D打印钴铬烤瓷</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_sandi_chuntai_guan" class="product_link" href="javascript:;">3D打印纯钛冠</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="zhongzhi_sandi_chuntai_kaosu" class="product_link" href="javascript:;">3D打印纯钛烤塑</a></td>
+								<td><a id="zhongzhi_sandi_daoban" class="product_link" href="javascript:;">3D打印导板</a></td>
+								<td></td>
+							</tr>
+						</table>
+						<h3>AREGEN</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhongzhi_aregen_jin_kaosu_ya_59_9_percent" class="product_link" href="javascript:;">Aregen59.9%金烤塑牙</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_aregen_jin_kaosu_ya_74_percent" class="product_link" href="javascript:;">Aregen74%金烤塑牙</a></td>
+								<td style="width: 33.3%;"><a id="zhongzhi_aregen_jin_kaosu_ya_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金烤塑牙</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="zhongzhi_aregen_jin_kaoci_ya_74_percent" class="product_link" href="javascript:;">Aregen74%金烤瓷牙</a></td>
+								<td><a id="zhongzhi_aregen_jin_kaoci_ya_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金烤瓷牙</a></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="listRight" style="overflow: auto;">
+						<h3>国产氧化锆</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="guding_guochanyanghuagao_quangao" class="product_link" href="javascript:;">全锆</a></td>
+								<td style="width: 33.3%;"><a id="guding_guochanyanghuagao_quanci" class="product_link" href="javascript:;">全瓷</a></td>
+								<td style="width: 33.3%;"><a id="guding_guochanyanghuagao_zhuanghe" class="product_link" href="javascript:;">桩核</a></td>
+							</tr>
+						</table>
+						<h3>威兰德</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="guding_weilande_quangao" class="product_link" href="javascript:;">威兰德全锆</a></td>
+								<td style="width: 50%;"><a id="guding_weilande_quanci" class="product_link" href="javascript:;">威兰德全瓷</a></td>
+							</tr>
+						</table>
+						<h3>LAVA</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="guding_lava_quangao" class="product_link" href="javascript:;">LAVA全锆</a></td>
+								<td style="width: 50%;"><a id="guding_lava_quanci" class="product_link" href="javascript:;">LAVA全瓷</a></td>
+							</tr>
+						</table>
+						<h3>变色龙</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="guding_bianselong_quangao" class="product_link" href="javascript:;">变色龙全锆</a></td>
+								<td style="width: 50%;"><a id="guding_bianselong_quanci" class="product_link" href="javascript:;">变色龙全瓷</a></td>
+							</tr>
+						</table>
+						<h3>3D打印类</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="guding_sandi_guge_zhuanghe" class="product_link" href="javascript:;">3D打印钴铬桩核</a></td>
+								<td style="width: 33.3%;"><a id="guding_sandi_guge_qianti" class="product_link" href="javascript:;">3D打印钴铬嵌体</a></td>
+								<td style="width: 33.3%;"><a id="guding_sandi_guge_guan" class="product_link" href="javascript:;">3D打印钴铬冠</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_sandi_guge_kaoci" class="product_link" href="javascript:;">3D打印钴铬烤瓷</a></td>
+								<td><a id="guding_sandi_chuntai_zhuanghe" class="product_link" href="javascript:;">3D打印纯钛桩核</a></td>
+								<td><a id="guding_sandi_chuntai_qianti" class="product_link" href="javascript:;">3D打印纯钛嵌体</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_sandi_chuntai_guan" class="product_link" href="javascript:;">3D打印纯钛冠</a></td>
+								<td><a id="guding_sandi_chuntai_juheci" class="product_link" href="javascript:;">3D打印纯钛聚合瓷</a></td>
+								<td></td>
+							</tr>
+						</table>
+						<h3>BEGO</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="guding_bego_guge_zhuanghe" class="product_link" href="javascript:;">BEGO钴铬桩核</a></td>
+								<td style="width: 33.3%;"><a id="guding_bego_guge_qianti" class="product_link" href="javascript:;">BEGO钴铬嵌体</a></td>
+								<td style="width: 33.3%;"><a id="guding_bego_guge_guan" class="product_link" href="javascript:;">BEGO钴铬冠</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_bego_guge_kaoci" class="product_link" href="javascript:;">BEGO钴铬烤瓷</a></td>
+								<td><a id="guding_bego_guge_juheci" class="product_link" href="javascript:;">BEGO钴铬聚合瓷</a></td>
+								<td></td>
+							</tr>
+						</table>
+						<h3>聚合瓷嵌体</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="guding_juheci_qianti" class="product_link" href="javascript:;">聚合瓷嵌体</a></td>
+								<td style="width: 50%;"></td>
+							</tr>
+						</table>
+						<h3>AREGEN</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="guding_aregen_jin_kaoci_ya_59_9_percent" class="product_link" href="javascript:;">Aregen59.9%金烤瓷牙</a></td>
+								<td style="width: 33.3%;"><a id="guding_aregen_jin_kaoci_ya_74_percent" class="product_link" href="javascript:;">Aregen74%金烤瓷牙</a></td>
+								<td style="width: 33.3%;"><a id="guding_aregen_jin_kaoci_ya_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金烤瓷牙</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_aregen_jin_kaosu_ya_59_9_percent" class="product_link" href="javascript:;">Aregen59.9%金烤塑牙</a></td>
+								<td><a id="guding_aregen_jin_kaosu_ya_74_percent" class="product_link" href="javascript:;">Aregen74%金烤塑牙</a></td>
+								<td><a id="guding_aregen_jin_kaosu_ya_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金烤塑牙</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_aregen_jin_guan_59_9_percent" class="product_link" href="javascript:;">Aregen59.9%金冠</a></td>
+								<td><a id="guding_aregen_jin_guan_74_percent" class="product_link" href="javascript:;">Aregen74%金冠</a></td>
+								<td><a id="guding_aregen_jin_guan_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金冠</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_aregen_jin_qianti_59_9_percent" class="product_link" href="javascript:;">Aregen59.9%金嵌体</a></td>
+								<td><a id="guding_aregen_jin_qianti_74_percent" class="product_link" href="javascript:;">Aregen74%金嵌体</a></td>
+								<td><a id="guding_aregen_jin_qianti_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金嵌体</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_aregen_jin_zhuanghe_59_9_percent" class="product_link" href="javascript:;">Aregen59.9%金桩核</a></td>
+								<td><a id="guding_aregen_jin_zhuanghe_74_percent" class="product_link" href="javascript:;">Aregen74%金桩核</a></td>
+								<td><a id="guding_aregen_jin_zhuanghe_89_5_percent" class="product_link" href="javascript:;">Aregen89.5%金桩核</a></td>
+							</tr>
+						</table>
+						<h3>其他</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="guding_linshiguan_cad" class="product_link" href="javascript:;">临时冠CAD</a></td>
+								<td style="width: 33.3%;"><a id="guding_linshiguan_cam" class="product_link" href="javascript:;">临时冠CAM</a></td>
+								<td style="width: 33.3%;"><a id="guding_laxingsheji" class="product_link" href="javascript:;">蜡型设计</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="guding_jiantaici" class="product_link" href="javascript:;">肩台瓷</a></td>
+								<td><a id="guding_yayinci" class="product_link" href="javascript:;">牙龈瓷</a></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="listRight">
+						<h3>3D打印支架类</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="huodong_sandi_zhijia_da_guge" class="product_link" href="javascript:;">3D打印钴铬大支架</a></td>
+								<td style="width: 50%;"><a id="huodong_sandi_zhijia_xiao_guge" class="product_link" href="javascript:;">3D打印钴铬小支架</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="huodong_sandi_zhijia_da_chuntai" class="product_link" href="javascript:;">3D打印纯钛大支架</a></td>
+								<td><a id="huodong_sandi_zhijia_xiao_chuntai" class="product_link" href="javascript:;">3D打印纯钛小支架</a></td></td>
+							</tr>
+						</table>
+						<h3>普通支架</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="huodong_zhijia_da_bego" class="product_link" href="javascript:;">BEGO大支架</a></td>
+								<td style="width: 33.3%;"><a id="huodong_zhijia_da_nuobiling" class="product_link" href="javascript:;">诺必灵大支架</a></td>
+								<td style="width: 33.3%;"><a id="huodong_zhijia_da_weitaling_2000" class="product_link" href="javascript:;">维他灵2000大支架</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="huodong_zhijia_xiao_bego" class="product_link" href="javascript:;">BEGO小支架</a></td>
+								<td><a id="huodong_zhijia_xiao_nuobiling" class="product_link" href="javascript:;">诺必灵小支架</a></td>
+								<td><a id="huodong_zhijia_xiao_weitaling_2000" class="product_link" href="javascript:;">维他灵2000小支架</a></td>
+							</tr>
+						</table>
+						<h3>排牙</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="huodong_paiya_kaifeng_zhusuzhuya" class="product_link" href="javascript:;">凯丰注塑煮牙</a></td>
+								<td style="width: 33.3%;"><a id="huodong_paiya_kaijing_zhusuzhuya" class="product_link" href="javascript:;">凯晶注塑煮牙</a></td>
+								<td style="width: 33.3%;"><a id="huodong_paiya_shofu_zhusuzhuya" class="product_link" href="javascript:;">松风注塑煮牙</a></td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="huodong_paiya_changzhengzhong_putong_zhusuzhuya" class="product_link" href="javascript:;">长正中普通注塑煮牙</a></td>
+								<td style="width: 33.3%;"><a id="huodong_paiya_changzhengzhong_chaoying_zhusuzhuya" class="product_link" href="javascript:;">长正中超硬注塑煮牙</a></td>
+								<td></td>
+							</tr>
+						</table>
+						<h3>胶托</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="huodong_jiaotuo_suliaotuoya" class="product_link" href="javascript:;">塑料托牙</a></td>
+								<td style="width: 33.3%;"><a id="huodong_jiaotuo_gexinghuatuopan" class="product_link" href="javascript:;">个性化托盘</a></td>
+								<td style="width: 33.3%;"><a id="huodong_jiaotuo_jinshuhedian" class="product_link" href="javascript:;">金属颌垫</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="huodong_jiaotuo_jinshuhemian" class="product_link" href="javascript:;">金属颌面</a></td>
+								<td><a id="huodong_jiaotuo_zhuzaohezhituo" class="product_link" href="javascript:;">铸造颌支托</a></td>
+								<td><a id="huodong_jiaotuo_chengpinwang" class="product_link" href="javascript:;">成品网</a></td>
+							</tr>
+						</table>
+						<h3>隐形义齿</h3>
+						<table style="border-collapse:collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="huodong_yinxingyichi_da" class="product_link" href="javascript:;">隐形义齿(大)</a></td>
+								<td style="width: 50%;"><a id="huodong_yinxingyichi_xiao" class="product_link" href="javascript:;">隐形义齿(小)</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="huodong_zhusuzhuya_bankou" class="product_link" href="javascript:;">注塑煮牙(半口)</a></td>
+								<td><a id="huodong_zhusuzhuya_quankou" class="product_link" href="javascript:;">注塑煮牙(全口)</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="listRight">
+						<h3>魅白超薄贴面</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="meixue_meibaichaobaotiemian" class="product_link" href="javascript:;">好莱坞魅白超薄贴面</a></td>
+								<td style="width: 50%;"></td>
+							</tr>
+						</table>
+						<h3>迈尔仿生</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="meixue_maierfangshengquangao" class="product_link" href="javascript:;">全锆</a></td>
+								<td style="width: 50%;"><a id="meixue_maierfangshengquanci" class="product_link" href="javascript:;">全瓷</a></td>
+							</tr>
+						</table>
+						<h3>铸瓷</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="meixue_zhuci_quanguan" class="product_link" href="javascript:;">铸瓷全冠</a></td>
+								<td style="width: 50%;"><a id="meixue_zhuci_qianti" class="product_link" href="javascript:;">铸瓷嵌体</a></td>
+							</tr>
+						</table>
+						<h3>玻璃陶瓷</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="meixue_bolitaoci_tiemian" class="product_link" href="javascript:;">玻璃陶瓷贴面</a></td>
+								<td style="width: 33.3%;"><a id="meixue_bolitaoci_qianti" class="product_link" href="javascript:;">玻璃陶瓷嵌体</a></td>
+								<td style="width: 33.3%;"><a id="meixue_bolitaoci_quanguan" class="product_link" href="javascript:;">玻璃陶瓷全冠</a></td>
+							</tr>
+						</table>
+						<h3>其他</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="meixue_meixuezhenduanla" class="product_link" href="javascript:;">美学诊断蜡</a></td>
+								<td style="width: 50%;"></td>
+							</tr>
+						</table>
+					</div>
+					<div class="listRight">
+						<h3>保持器</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhengji_yinxingbaochiqi_bankou" class="product_link" href="javascript:;">隐形保持器(半口)</a></td>
+								<td style="width: 33.3%;"><a id="zhengji_wanzhibaochiqi_bankou" class="product_link" href="javascript:;">弯制保持器(半口)</a></td>
+								<td style="width: 33.3%;"><a id="zhengji_jianxibaochiqi" class="product_link" href="javascript:;">间隙保持器</a></td>
+							</tr>
+						</table>
+						<h3>其他</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="zhengji_yemoyatao" class="product_link" href="javascript:;">夜磨牙套</a></td>
+								<td style="width: 33.3%;"><a id="zhengji_jiaozhengqi_bankou" class="product_link" href="javascript:;">矫正器(半口)</a></td>
+								<td style="width: 33.3%;"><a id="zhengji_luoxuankuogongqi" class="product_link" href="javascript:;">螺旋扩弓器</a></td>
+							</tr>
+							<tr>
+								<td style="height: 32px;"><a id="zhengji_zuhanqi" class="product_link" href="javascript:;">阻鼾器</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="listRight">
+						<h3>附着体</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="jingmifujian_shuandaofuzhuoti" class="product_link" href="javascript:;">栓道附着体</a></td>
+								<td style="width: 33.3%;"><a id="jingmifujian_qiumaofuzhuoti" class="product_link" href="javascript:;">球帽附着体</a></td>
+								<td style="width: 33.3%;"><a id="jingmifujian_cixingfuzhuoti" class="product_link" href="javascript:;">磁性附着体</a></td>
+							</tr>
+						</table>
+						<h3>其他</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 33.3%; height: 32px;"><a id="jingmifujian_mk1" class="product_link" href="javascript:;">MK1</a></td>
+								<td style="width: 33.3%;"><a id="jingmifujian_taijikou" class="product_link" href="javascript:;">太极扣</a></td>
+								<td style="width: 33.3%;"><a id="jingmifujian_taotongguan" class="product_link" href="javascript:;">套筒冠</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="listRight">
+						<h3>3D打印树脂模型</h3>
+						<table style="border-collapse: collapse;">
+							<tr>
+								<td style="width: 50%; height: 32px;"><a id="sandi_shuzhimoxing_bankou" class="product_link" href="javascript:;">半口树脂模型(需要配合扫描)</a></td>
+								<td style="width: 50%;"><a id="sandi_shuzhimoxing_quankou" class="product_link" href="javascript:;">全口树脂模型(需要配合扫描)</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id="main2">
+				<div id="main2_top">
+					<h3 style="width: 70%;">试做信息</h3>
+					<table style="margin-top: 2%; margin-left: 5%;">
+						<tr><td style="width: 50%;"><input id="shineiguan" type="checkbox" autocomplete="off">试内冠</td></tr>
+						<tr><td style="width: 50%;"><input id="shiciya" type="checkbox" autocomplete="off">试瓷牙</td></tr>
+						<tr><td><input id="shizhijia" type="checkbox" autocomplete="off">试支架</td></tr>
+						<tr><td><input id="shipaiya" type="checkbox" autocomplete="off">试排牙</td></tr>
+					</table>
+				</div>
+				<div id="main2_bottom">
+					<h3 style="width: 70%; display: inline-block;">随单附品</h3>
+					<table id="main2_bottom_table1" style="margin-top: 2%;">
+						<tr>
+							<td style="width: 70%;">蜡堤</td>
+							<td style="width: 15%;">×</td>
+							<td style="width: 15%;"><input id="suidanfupin_ladi_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>旧牙</td>
+							<td>×</td>
+							<td><input id="suidanfupin_jiuya_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>人工牙龈</td>
+							<td>×</td>
+							<td><input id="suidanfupin_rengongyayin_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>托盘</td>
+							<td>×</td>
+							<td><input id="suidanfupin_tuopan_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>颌架</td>
+							<td>×</td>
+							<td><input id="suidanfupin_hejia_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>参考模</td>
+							<td>×</td>
+							<td><input id="suidanfupin_cankaomo_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>基台</td>
+							<td>×</td>
+							<td><input id="suidanfupin_jitai_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>转移杆</td>
+							<td>×</td>
+							<td><input id="suidanfupin_zhuanyigan_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<td>替代体</td>
+							<td>×</td>
+							<td><input id="suidanfupin_tidaiti_shuliang" type="text" autocomplete="off" style="width: 100%;"></td>
+						</tr>
+					</table>
+					<table id="main2_bottom_table2" style="margin-top: 2%;">
+						<tr>
+							<td style="width: 50%;">其他</td>
+							<td style="width: 50%;"><input id="suidanfupin_qita" type="text" style="width: 100%;" autocomplete="off"></td>
+						</tr>
+						<tr>
+							<td>数量</td>
+							<td><input id="suidanfupin_qita_shuliang" type="text" style="width: 100%;" autocomplete="off"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="show">
+			<div id="show_subdiv1"></div>
+			<div id="show_subdiv2">
+				<div id="show_subdiv2_sub1">
+					<input id="close_show_btn" type="button" value="X">
+					<input id="add_to_cart_btn" style="width: 120px;" type="button" value="添加到购物车">
+					<input id="reset_btn" type="button" value="清空">
+				</div>
+				<div id="show_subdiv2_sub2"></div>
+				<div id="show_subdiv2_sub3"></div>
+				<div id="show_subdiv2_sub4">
+					<h3 style="width: 80px; left: 0; top: 0; margin: 5px 0 5px 0;">医生说明</h3>
+					<textarea id="yishengshuoming" style="width: 95%; height: 350px;" autocomplete="off"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="order_function.js"></script>
+<script type="text/javascript" src="add_to_cart.js"></script>
+<script type="text/javascript" src="canvas_function.js"></script>
+</html>

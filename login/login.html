@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<link rel="stylesheet" type="text/css" href="login_style.css">
+	<title>登录</title>
+</head>
+<body>
+	<div id="box">
+		<form id="login" action="http://www.maierlefu.com/mywebsite/php/select_client.php" method="post">
+			<div id="header">
+				<img style="width: 250px; height: 50px;" src="img/logo.png">
+				<img style="width: 250px; height: 50px; margin-left: 20px;" src="img/logo2.png">
+			</div>
+			<div id="main">
+				<div id="username">
+					<img src="img/username_icon.jpg">
+					<input id="username_input" type="text" name="username" placeholder="用户名" autocomplete="off">
+				</div>
+				<div id="password">
+					<img src="img/password_icon.jpg">
+					<input id="password_input" type="password" name="password" placeholder="密&nbsp;&nbsp;&nbsp;&nbsp;码" autocomplete="off">
+				</div>
+				<div id="button">
+					<input id="login_button" type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" onclick="return checkForm(this.form);">
+				</div>
+				<div id="other_option">
+					<a href="">找回密码</a>
+					<a href="../signup/signup.html">点我注册</a>
+				</div>
+			</div>
+		</form>
+	</div> 
+</body>
+<script type="text/javascript" src="login_function.js"></script>
+</html>

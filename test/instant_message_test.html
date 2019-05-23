@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>instant message test</title>
+	<style type="text/css">
+		.baloon{
+			padding: 5px 20px;
+			width:fit-content;
+			width:-webkit-fit-content;
+			width:-moz-fit-content;
+			height:fit-content;
+			height:-webkit-fit-content;
+			height:-moz-fit-content;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="display" style="width: 600px; height: 300px; border: 1px solid black;"></div>
+	<div id="edit" style="width: 600px; height: 180px; margin-top: 5px; border: 1px solid black;">
+		<div id="expression" style="width: 100%; height: 30px; border-bottom: 1px solid black;">表情包功能即将上线...</div>
+		<div id="textdiv" contenteditable="true" style="width: 100%; height: 120px; border-bottom: 1px solid black; background-color: rgb(230, 230, 230);"></div>
+		<input id="send" type="button" style="width: 50px; height: 30px; margin-left: 550px;" value="发送">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var display = document.querySelector("#display");
+	var textDiv = document.querySelector("#textdiv");
+	var sendBtn = document.querySelector("#send");
+	var url = "http://localhost/mywebsite/php/instant_message.php";
+	var senderIdArray = Array("self", "theother");
+	sendBtn.onclick = function() {
+		var senderId = senderIdArray[Math.round(Math.random())];
+		requestByPOST(url, "request=sendmessage&senderid=" + senderId + "&message=" + textDiv.innerText, function(response){
+			createOutboxBaloon(response);
+		})
+	}
+	setInterval(function() {
+		requestByPOST(url, "request=receivemessage", function(response){
+			$recordArray = JSON.parse(response);
+			for (var i = 0; i < $recordArray.length; i ++) {
+
+			}
+		})
+	}, 500);
+
+	function createOutboxBaloon(text) {
+		var baloon = document.createElement("div");
+		baloon.innerText = text;
+		baloon.className = "baloon";
+		baloon.style.backgroundColor = "green";
+		display.appendChild(baloon);
+	}
+	function createInboxBaloon(text) {
+		var baloon = document.createElement("div");
+		baloon.innerText = text;
+		baloon.className = "baloon";
+		baloon.style.backgroundColor = "blue";
+		display.appendChild(baloon);
+	}
+	function requestByPOST(url,postbody,successCallback,errorCallback){
+		if (window.XMLHttpRequest) {
+			var request = new XMLHttpRequest();
+		}else{
+			var request = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		request.open("POST",url,true);
+		request.setRequestHeader("content-type","application/x-www-form-urlencoded");
+		request.send(postbody);
+
+		request.onreadystatechange = function(){
+			if (request.readyState == 4 && request.status == 200) {
+				if(successCallback){
+					successCallback(request.responseText);
+				}
+			}else if(request.readyState == 4 && request.status != 200){
+				if (errorCallback) {
+					errorCallback(request.statusText);
+				}
+			}
+		}
+	}
+</script>

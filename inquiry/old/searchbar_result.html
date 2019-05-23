@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>查询结果</title>
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload = function(){
+			var request = decodeURI(location.search);
+			var URL = "http://localhost/mywebsite/php/searchbar.php" + request;
+			requestByGET(URL, function(res){
+				console.log(res);
+				if (res.indexOf("invalid search") != -1) {
+					alert("查无此项!");
+				}else{
+					var result = JSON.parse(res);
+					if (result.length >= 1) {
+						console.log(result);
+					}else{
+						alert("查无此项!");
+					}
+				}
+			});
+		}
+
+		function requestByGET(url, successCallback, errorCallback){
+			if(window.XMLHttpRequest){
+				var request = new XMLHttpRequest();
+			}else{
+				var request = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			request.open("GET", url, true);
+			request.send();
+
+			request.onreadystatechange = function(){
+				if(request.readyState == 4 && request.status == 200){
+					//如果调用函数的时候，传入了成功的回调函数，我们调用一下这个回调函数，并把服务器返回的数据作为回调函数的参数，供外界使用。
+					if(successCallback){
+						successCallback(request.responseText);
+					}
+				}else if(request.readyState == 4 && request.status != 200){
+					if(errorCallback){
+						errorCallback(request.statusText);
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

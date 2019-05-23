@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test print</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="请输入要打印的div名称">
+	<input type="button" id="btn" value="打印">
+	<div id="div1" style="width: 400px; height: 250px; background-color: red; margin: 30px;">
+		DIV1
+	</div>
+	
+	<div id="div2" style="width: 400px; height: 250px; background-color: yellow; margin: 30px;">
+		DIV2
+	</div>
+	
+	<div id="div3" style="width: 400px; height: 250px; background-color: blue; margin: 30px;">
+		DIV3
+	</div>
+	
+	<div id="div4" style="width: 400px; height: 250px; background-color: orange; margin: 30px;">
+		DIV4
+	</div>
+</body>
+<script>
+	// var divs = document.getElementsByClassName("barcode");
+	var input = document.getElementById("input");
+	var btn = document.getElementById("btn");
+	var body = document.getElementsByTagName("body")[0];
+	var div1 = document.getElementById("div1");
+	var div2 = document.getElementById("div2");
+	var div3 = document.getElementById("div3");
+	var div4 = document.getElementById("div4");
+	btn.onclick = function () {
+		var sourceDiv = new Array();
+		function printDiv (para) {
+			if (para == "") {
+				sourceDiv = new Array(div1, div2, div3, div4);
+				for (var i = 0; i < sourceDiv.length; i ++) {
+					var newWindow = window.open("", "new"+i, "width=400", "height=250");
+					newWindow.document.write("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>new window</title></head><body><div id='newDiv' style='width:400px;height:250px;'></div></body></html>");
+					var newDiv = newWindow.document.getElementById("newDiv");
+					newDiv.innerText = sourceDiv[i].innerText;
+					newDiv.style.backgroundColor = sourceDiv[i].style.backgroundColor;
+					newWindow.window.print();
+					newWindow.window.close();
+				}
+			}else{
+				var newWindow = window.open("", "new", "width=400", "height=250");
+				newWindow.document.write("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>new window</title></head><body><div id='newDiv' style='width:400px;height:250px;'></div></body></html>");
+				var newDiv = newWindow.document.getElementById("newDiv");
+				switch (para) {
+					case "div1":
+						sourceDiv.push(div1);
+						break;
+					case "div2":
+						sourceDiv.push(div2);
+						break;
+					case "div3":
+						sourceDiv.push(div3);
+						break;
+					case "div4":
+						sourceDiv.push(div4);
+						break;
+				}
+				newDiv.innerText = sourceDiv[0].innerText;
+				newDiv.style.backgroundColor = sourceDiv[0].style.backgroundColor;
+				newWindow.window.print();
+				newWindow.window.close();
+			}
+		}
+		printDiv(input.value);
+	}
+	</script>
+</html>
